@@ -98,4 +98,10 @@ var collectableList = {
   kennedi: { image: "images/collectables/kennedi-head.png" },
   max: { image: "images/collectables/max-head.png" },
   steve: { image: "images/collectables/steve-head.png" },
+  banana: { image: "images/collectables/banana.png"},
+  apple: { image: "images/collectables/apple.png" },
+  mango: { image: "images/collectables/mango.png" },
+  coconut: { image: "images/collectables/coconuts.png" },
+  guava: { image: "images/collectables/guavas.png" }
+  
 };
