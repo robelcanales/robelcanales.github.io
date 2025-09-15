@@ -5,9 +5,19 @@
     <title>Bouncing Box</title>
     <script src="jquery.min.js"></script>
     <style>
+      body {
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+         background-size: cover;
+        background-image: url("https://cdn.mos.cms.futurecdn.net/ynCURw2p6qf74hJHXipdqh.jpg");
+        background-color: #d44b4b;
+      }
+
       .box {
         width: 70px;
         height: 70px;
+        background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRaqhQX6l1joHzlcbNTXud1CkvG6KaTt0F3zCQsPpF9lrH9lN6E:https://mcdf.wiki.gg/images/d/dd/Lava_Texture_Item.jpg%3F269d27&s);
         background-color: teal;
         font-size: 300%;
         text-align: center;
@@ -55,8 +65,9 @@
         box.on("click", handleBoxClick);
 
         // moves the Box to a new position on the screen along the X-Axis
-        function moveBoxTo(newPositionX) {
+        function moveBoxTo(newPositionX, newPositionY) {
           box.css("left", newPositionX);
+          box.css("top", newPositionY);
         }
 
         // changes the text displayed on the Box
@@ -69,10 +80,12 @@
         //////////////////////////////////////////////////////////////////
 
         // TODO 2 - Variable declarations
+        var boardHeight = jQuery(window).height();
         var positionX = 0;
         var points = 0;
         var speed = 10;
-
+        var positionY = 0;
+        var speedY = 10; 
 
         /**
          * This Function will be called 20 times/second.
@@ -80,8 +93,9 @@
          * If the box drifts off the screen, turn it around!
          */
         function update() {
-          moveBoxTo(positionX); 
+          moveBoxTo(positionX, positionY); 
           positionX = positionX + speed;
+          positionY = positionY + speed;
           
           if (positionX > boardWidth){
             speed = speed * -1;
@@ -89,6 +103,14 @@
           
           if (positionX < 0){
             speed *= -1;
+          }
+
+          if (positionY > boardWidth){
+            speedY = speedY * -1;
+          }
+          
+          if (positionY < 0){
+            speedY *= -1;
           }
 
         }
