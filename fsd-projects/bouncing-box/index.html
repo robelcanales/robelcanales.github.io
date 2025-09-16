@@ -9,7 +9,7 @@
         -webkit-background-size: cover;
         -moz-background-size: cover;
         -o-background-size: cover;
-         background-size: cover;
+        background-size: cover;
         background-image: url("https://cdn.mos.cms.futurecdn.net/ynCURw2p6qf74hJHXipdqh.jpg");
         background-color: #d44b4b;
       }
@@ -85,7 +85,7 @@
         var points = 0;
         var speed = 10;
         var positionY = 0;
-        var speedY = 10; 
+        var speedY = 10;
 
         /**
          * This Function will be called 20 times/second.
@@ -93,26 +93,25 @@
          * If the box drifts off the screen, turn it around!
          */
         function update() {
-          moveBoxTo(positionX, positionY); 
+          moveBoxTo(positionX, positionY);
           positionX = positionX + speed;
-          positionY = positionY + speed;
-          
-          if (positionX > boardWidth){
+          positionY = positionY + speedY;
+
+          if (positionX > boardWidth) {
             speed = speed * -1;
           }
-          
-          if (positionX < 0){
+
+          if (positionX < 0) {
             speed *= -1;
           }
 
-          if (positionY > boardWidth){
+          if (positionY > boardHeight) {
             speedY = speedY * -1;
           }
-          
-          if (positionY < 0){
+
+          if (positionY < 0) {
             speedY *= -1;
           }
-
         }
 
         /**
@@ -124,15 +123,11 @@
          */
         function handleBoxClick() {
           positionX = 0;
+          positionY = 0;
           changeBoxText(points);
           points = points + 1;
           speed = 3 * points + 10;
-
-
         }
-
-
-        
       })();
     </script>
   </body>
