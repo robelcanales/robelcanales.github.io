@@ -30,7 +30,8 @@ var background = function (window) {
         //////////////////////////////////////////////////////////////////
         // TODO (several):
         var tree;
-      
+        var buildings = [];
+        
         // called at the start of game and whenever the page is resized
         // add objects for display in background. draws each image added to the background once
         function render() {
@@ -62,8 +63,16 @@ var background = function (window) {
             
             
             // TODO 4: Part 1 - Add buildings!     Q: This is before TODO 4 for a reason! Why?
-            
-            
+            for (var i = 0; i < 5; ++i) {
+                var buildingColors = ["Pink", "Red", "LightBlue", "Black", "Yellow"]
+                var buildingHeight = 300 * Math.random(); //stores the value representing the height
+                var building = draw.rect(75, buildingHeight, buildingColors[i], "Black", 1); //draws a rectangle, and uses width, height, fill color, outline, and outline thickness 
+                building.x = 250 * i; //sets the x value of the building
+                building.y = groundY - buildingHeight; //sets the y value of the building
+                background.addChild(building); //adds the building to the background container
+                buildings.push(building); //takes the building and puts it into the array
+            }
+                            
             // TODO 3: Part 1 - Add a tree
             tree = draw.bitmap("img/tree.png"); //creates a bitmap object using the tree image and stores it in the variable tree 
             tree.x = 600; //sets the x value of the tree
@@ -90,7 +99,13 @@ var background = function (window) {
             }
             
             // TODO 4: Part 2 - Parallax
-            
+            for(var i = 0; i < buildings.length; i++){ 
+                var building = buildings[i]; //takes an index of the buildings array 
+                building.x -= 1; 
+                if (building.x < -200){
+                    building.x = canvasWidth;
+                } //checks if the x value has come true, and if true, it takes the x value and makes it canvasWidth
+            } //every time 
 
         } // end of update function - DO NOT DELETE
         
