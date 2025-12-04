@@ -40,7 +40,7 @@ var background = function (window) {
             // TODO 1:
             // this currently fills the background with an obnoxious yellow;
             // you should modify both the height and color to suit your game
-            var backgroundFill = draw.rect(canvasWidth,groundY,'lightBlue'); //draws a rectangle and stores it in the variable backgroundFill
+            var backgroundFill = draw.rect(canvasWidth,groundY,'gray'); //draws a rectangle and stores it in the variable backgroundFill
             background.addChild(backgroundFill); //adds the backroundFill to the background object
             
             // TODO 2: - Add a moon and starfield
