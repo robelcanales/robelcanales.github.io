@@ -17,10 +17,10 @@ var makeLevelData = function (window) {
         gameItems: [
           { type: "obstacle", x: 400, y: groundY - 110, damage: 10, rotation: 0, hitZone: 25, image: "img/spikes.png", offsetX: -25, offsetY: -25, scaleX: 0.05, scaleY: 0.05},
           { type: "obstacle", x: 600, y: groundY - 10, damage: 20, rotation: 0, hitZone: 25, image: "img/spikes.png", offsetX: -25, offsetY: -25, scaleX: 0.05, scaleY: 0.05},
-          { type: "obstacle", x: 800, y: groundY - 110, damage: 90, rotation: 0, hitZone: 25, image: "img/spikes.png", offsetX: -25, offsetY: -25, scaleX: 0.05, scaleY: 0.05},
+          { type: "obstacle", x: 800, y: groundY - 110, damage: 70, rotation: 0, hitZone: 25, image: "img/spikes.png", offsetX: -25, offsetY: -25, scaleX: 0.05, scaleY: 0.05},
           
-          { type: "enemy", x: 400, y: groundY - 50},
-          { type: "enemy", x: 1600, y: groundY - 60},
+          { type: "enemy", x: 400, y: groundY - 80, hitZone: 40, velocity: 3, damage: -50, score: 300, offsetX: -25, offsetY: -25, scaleX: 0.2, scaleY: 0.2, image: "img/zombie.png"},
+          { type: "enemy", x: 1900, y: groundY - 80, hitZone: 40, velocity: 8, damage: -50, score: 400, offsetX: -25, offsetY: -25, scaleX: 0.2, scaleY: 0.2, image: "img/zombie.png"},
           { type: "enemy", x: 2400, y: groundY - 60},
           { type: "reward", x: 2000, y: groundY - 100},
 
@@ -33,7 +33,7 @@ var makeLevelData = function (window) {
         number: 2,
         speed: -3,
         gameItems: [
-          { type: "obstacle", x: 400, y: groundY, damage: 10 },
+          { type: "obstacle", x: 400, y: groundY - 110, damage: 10, rotation: 0, hitZone: 25, image: "img/spikes.png", offsetX: -25, offsetY: -25, scaleX: 0.05, scaleY: 0.05},
           { type: "obstacle", x: 600, y: groundY, damage: 10 },
           { type: "obstacle", x: 900, y: groundY, damage: 10 },
         ],
