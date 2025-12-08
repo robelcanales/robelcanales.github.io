@@ -52,8 +52,8 @@ var runLevels = function (window) {
     enemy.x = x; // sets the enemy x position
     enemy.y = y; // sets the enemy y position
     game.addGameItem(enemy); //adds the enemy to the game
-    enemyImage.scaleX = scaleX; //scales the enemy relative to the hitzone
-    enemyImage.scaleY = scaleY; //scales the enemy relative to the hitzone
+    enemyImage.scaleX = scaleX; //scales the enemy relative to the hitzone horizontally
+    enemyImage.scaleY = scaleY; //scales the enemy relative to the hitzone vertically
 
     enemy.velocityX -= velocity; //animates the enemy moving across the screen
 
@@ -79,7 +79,7 @@ var runLevels = function (window) {
   
 
 
-  function createReward(x, y, hitZone, offsetX, offsetY, velocity, health, image){
+  function createReward(x, y, hitZone, offsetX, offsetY, scaleX, scaleY, velocity, health, image){
     var reward = game.createGameItem("reward", hitZone); // Creates reward game item with a hitzone of 25 and stores it in the variable reward
     var rewardImage = draw.bitmap(image); //creates the image of the reward and stores it in variable rewardImage
     rewardImage.x = offsetX; //horizontal offset from the image to the hitzone 
@@ -88,6 +88,9 @@ var runLevels = function (window) {
     reward.x = x; // sets the reward x position
     reward.y = y; // sets the reward y position
     game.addGameItem(reward); //adds the reward to the game
+    rewardImage.scaleX = scaleX; //scales the reward relative to the hitzone horizontally
+    rewardImage.scaleY = scaleY; //scales the reward relative to the hitzone vertically
+    
 
     reward.velocityX -= velocity; //animates the reward moving across the screen
 
@@ -100,7 +103,7 @@ var runLevels = function (window) {
   }
       
 
-  function createLevelMarker(x, y, hitZone, offsetX, offsetY, velocity, image){
+  function createLevelMarker(x, y, hitZone, offsetX, offsetY, scaleX, scaleY, velocity, image){
     var levelMarker = game.createGameItem("level", hitZone); // Creates levelMarker game item with a hitzone of 25 and stores it in the variable levelMarker
     var levelImage = draw.bitmap(image); //creates the image of the levelMarker and stores it in variable levelMarkerImage
     levelImage.x = offsetX; //horizontal offset from the image to the hitzone 
@@ -109,6 +112,10 @@ var runLevels = function (window) {
     levelMarker.x = x; // sets the levelMarker x position
     levelMarker.y = y; // sets the levelMarker y position
     game.addGameItem(levelMarker); //adds the levelMarker to the game
+    levelImage.scaleX = scaleX; //scales the level relative to the hitzone horizontally
+    levelImage.scaleY = scaleY; //scales the level relative to the hitzone vertically
+
+
 
     levelMarker.velocityX -= velocity; //animates the levelMarker moving across the screen
 
@@ -140,11 +147,11 @@ var runLevels = function (window) {
         }
 
         if(element.type === "reward"){
-          createReward(element.x, element.y, element.hitZone, element.offsetX, element.offsetY, element.health, element.image);
+          createReward(element.x, element.y, element.hitZone, element.offsetX, element.offsetY, element.scaleX, element.scaleY, element.velocity, element.health, element.image);
         }
 
         if(element.type === "levelMarker"){
-          createLevelMarker(element.x, element.y, element.hitZone, element.offsetX, element.offsetY, element.velocity, element.image);
+          createLevelMarker(element.x, element.y, element.hitZone, element.offsetX, element.offsetY, element.scaleX, element.scaleY, element.velocity, element.image);
         }
 
       }

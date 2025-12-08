@@ -15,16 +15,22 @@ var makeLevelData = function (window) {
         number: 1,
         speed: -3,
         gameItems: [
-          { type: "obstacle", x: 400, y: groundY - 110, damage: 10, rotation: 0, hitZone: 25, image: "img/spikes.png", offsetX: -25, offsetY: -25, scaleX: 0.05, scaleY: 0.05},
-          { type: "obstacle", x: 600, y: groundY - 10, damage: 20, rotation: 0, hitZone: 25, image: "img/spikes.png", offsetX: -25, offsetY: -25, scaleX: 0.05, scaleY: 0.05},
+          { type: "obstacle", x: 400, y: groundY - 105, damage: 10, rotation: 0, hitZone: 25, image: "img/spikes.png", offsetX: -25, offsetY: -25, scaleX: 0.05, scaleY: 0.05},
+          { type: "obstacle", x: 600, y: groundY - 15, damage: 20, rotation: -3, hitZone: 20, image: "img/tumbleweed.png", offsetX: -25, offsetY: -25, scaleX: 0.31, scaleY: 0.31},
           { type: "obstacle", x: 800, y: groundY - 110, damage: 70, rotation: 0, hitZone: 25, image: "img/spikes.png", offsetX: -25, offsetY: -25, scaleX: 0.05, scaleY: 0.05},
+          { type: "obstacle", x: 850, y: groundY - 110, damage: 70, rotation: 0, hitZone: 25, image: "img/spikes.png", offsetX: -25, offsetY: -25, scaleX: 0.05, scaleY: 0.05},
+          { type: "obstacle", x: 900, y: groundY - 110, damage: 70, rotation: 0, hitZone: 25, image: "img/spikes.png", offsetX: -25, offsetY: -25, scaleX: 0.05, scaleY: 0.05},
           
-          { type: "enemy", x: 400, y: groundY - 80, hitZone: 40, velocity: 3, damage: -50, score: 300, offsetX: -25, offsetY: -25, scaleX: 0.2, scaleY: 0.2, image: "img/zombie.png"},
-          { type: "enemy", x: 1900, y: groundY - 80, hitZone: 40, velocity: 8, damage: -50, score: 400, offsetX: -25, offsetY: -25, scaleX: 0.2, scaleY: 0.2, image: "img/zombie.png"},
+          
+          { type: "enemy", x: 800, y: groundY - 100, hitZone: 40, velocity: 3, damage: -50, score: 300, offsetX: -25, offsetY: -25, scaleX: 0.2, scaleY: 0.2, image: "img/zombie.png"},
+          { type: "enemy", x: 20, y: groundY - 80, hitZone: 40, velocity: 3, damage: -50, score: 300, offsetX: -25, offsetY: -25, scaleX: 0.2, scaleY: 0.2, image: "img/zombie.png"},
+          { type: "enemy", x: 1900, y: groundY - 80, hitZone: 40, velocity: 3, damage: -50, score: 400, offsetX: -25, offsetY: -25, scaleX: 0.2, scaleY: 0.2, image: "img/zombie.png"},
+          { type: "enemy", x: 2200, y: groundY - 80, hitZone: 40, velocity: 3, damage: -50, score: 400, offsetX: -25, offsetY: -25, scaleX: 0.2, scaleY: 0.2, image: "img/zombie.png"},
           { type: "enemy", x: 2400, y: groundY - 60},
-          { type: "reward", x: 2000, y: groundY - 100},
 
-          { type: "levelMarker", x: 3200, y: groundY - 100},
+          { type: "reward", x: 3000, y: groundY - 100, hitZone: 40, offsetX: -25, offsetY: -25, scaleX: 0.05, scaleY: 0.05, velocity: 8, health: 20, image: "img/spikes.png"},
+
+          { type: "levelMarker", x: 5000, y: groundY - 100, hitZone: 40, offsetX: -25, offsetY: -25, scaleX: 0.05, scaleY: 0.05, velocity: 4, image: "img/spikes.png"},
   
         ],
       },
