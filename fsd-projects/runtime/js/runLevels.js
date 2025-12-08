@@ -100,17 +100,17 @@ var runLevels = function (window) {
   }
       
 
-  function createLevelMarker(x, y){
-    var levelMarker = game.createGameItem("level", 25); // Creates levelMarker game item with a hitzone of 25 and stores it in the variable levelMarker
-    var levelImage = draw.rect(50, 50, "yellow"); //creates the image of the levelMarker and stores it in variable levelMarkerImage
-    levelImage.x = -25; //horizontal offset from the image to the hitzone 
-    levelImage.y = -25; // vertical offset from the image to the hitzone
+  function createLevelMarker(x, y, hitZone, offsetX, offsetY, velocity, image){
+    var levelMarker = game.createGameItem("level", hitZone); // Creates levelMarker game item with a hitzone of 25 and stores it in the variable levelMarker
+    var levelImage = draw.bitmap(image); //creates the image of the levelMarker and stores it in variable levelMarkerImage
+    levelImage.x = offsetX; //horizontal offset from the image to the hitzone 
+    levelImage.y = offsetY; // vertical offset from the image to the hitzone
     levelMarker.addChild(levelImage); //attaches the image to the levelMarker object
     levelMarker.x = x; // sets the levelMarker x position
     levelMarker.y = y; // sets the levelMarker y position
     game.addGameItem(levelMarker); //adds the levelMarker to the game
 
-    levelMarker.velocityX -= 3; //animates the levelMarker moving across the screen
+    levelMarker.velocityX -= velocity; //animates the levelMarker moving across the screen
 
     //handles when Halle collides with the levelMarker
     levelMarker.onPlayerCollision = function(){
@@ -140,11 +140,11 @@ var runLevels = function (window) {
         }
 
         if(element.type === "reward"){
-          createReward(element.x, element.y);
+          createReward(element.x, element.y, element.hitZone, element.offsetX, element.offsetY, element.health, element.image);
         }
 
         if(element.type === "levelMarker"){
-          createLevelMarker(element.x, element.y);
+          createLevelMarker(element.x, element.y, element.hitZone, element.offsetX, element.offsetY, element.velocity, element.image);
         }
 
       }
