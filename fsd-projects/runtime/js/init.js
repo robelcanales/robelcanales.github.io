@@ -34,11 +34,11 @@ var init = function (window) {
   var help = draw.textfield(
     "MOVES || up: jump | right: flying jump | down: duck | space: fire | q self destruct!",
     "20px Arial",
-    "#ccc",
+    "#000000ff",
     "left"
   );
   help.x = 10;
-  help.y = ground.y + ground.getBounds().height + 10;
+  help.y = ground.y + ground.getBounds().height + 40;
   view.addChild(help);
 
   window.opspark.makeSpriteSheet(data).then(function (ss) {
