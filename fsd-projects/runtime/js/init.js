@@ -32,7 +32,7 @@ var init = function (window) {
   view.addChild(background);
 
   var help = draw.textfield(
-    "MOVES || up: jump | right: flying jump | down: duck | space: fire | q self destruct!",
+    "MOVES || Up: Jump | Right: Flying Jump | Down: Duck | Space: Fire | q: Explode!",
     "20px Arial",
     "#000000ff",
     "left"
