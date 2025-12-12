@@ -133,7 +133,7 @@ var runLevels = function (window) {
     function startLevel() {
       // TODO 13 goes below here
       //replace currentLevel in brackets of levelData
-      var level = levelData[2];// fetches the current level from the levelData array, and stores it inside the level variable
+      var level = levelData[currentLevel];// fetches the current level from the levelData array, and stores it inside the level variable
       var levelObjects = level.gameItems; //retrieves the array of gameItems and stores it in levelObjects variable
 
       for(var i = 0; i < levelObjects.length; i++){
