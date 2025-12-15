@@ -14,7 +14,7 @@ var runLevels = function (window) {
     var levelData = window.opspark.levelData;
 
     // set this to true or false depending on if you want to see hitzones
-    game.setDebugMode(true);
+    game.setDebugMode(false);
 
     // TODOs 5 through 11 go here
     // BEGIN EDITING YOUR CODE HERE
@@ -132,7 +132,7 @@ var runLevels = function (window) {
 
     function startLevel() {
       // TODO 13 goes below here
-      //replace currentLevel in brackets of levelData
+      
       var level = levelData[currentLevel];// fetches the current level from the levelData array, and stores it inside the level variable
       var levelObjects = level.gameItems; //retrieves the array of gameItems and stores it in levelObjects variable
 
